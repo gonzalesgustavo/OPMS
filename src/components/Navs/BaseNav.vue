@@ -3,8 +3,6 @@
     v-row
       v-col(cols="10". xl="10")
         h2 Ohmni Projecto
-      v-col(cols="2", xl="2", class="d-flex")
-        v-btn(outlined, color="white", class="logbtn mr-auto pa-2") Login
 </template>
 
 <script lang="ts">
@@ -22,7 +20,7 @@ export default class BaseNav extends Vue {}
   background-color: #425559;
   padding: 3px;
   color: var(--color-primary);
-  .logbtn{
+  .logbtn {
     margin-top: -7.5px;
   }
   h2 {

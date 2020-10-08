@@ -25,7 +25,7 @@ export default Vue.extend({
   margin: 0;
   padding: 0;
 }
-.main-bod{
+.main-bod {
   background: #22272e;
 }
 :root {
