@@ -25,6 +25,6 @@ export default class App extends Vue {}
   --bg-dark: rgba(22, 70, 75, 0.568);
   --color-primary: rgb(25, 120, 129);
   --color-primary-tint: rgb(173, 243, 250);
-  --color-dark: rgb(14, 36, 36);
+  --color-dark: rgb(0, 0, 0);
 }
 </style>

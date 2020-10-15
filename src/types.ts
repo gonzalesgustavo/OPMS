@@ -8,7 +8,7 @@ export interface Message {
   to: string;
   from: string;
   msg: string;
-  project:ProjectMicro;
+  project: ProjectMicro;
 }
 
 export interface ProjectMicro {

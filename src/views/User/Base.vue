@@ -1,41 +1,37 @@
 <template lang="pug">
 .base-container
-  .menu-left
-    app-sidebar-actions
-    hr
-    h2 Tasks
-    app-taskbox(:tasks="tasks")
-  .center-field
-    p center
-  .right-menu
-    app-messageticker
+  .base-body
+    .base-btnbar
+      v-btn(outlined, color="indigo") Projects
+      v-btn(outlined color="purple lighten-1") Messages
+      v-btn(outlined color="blue lighten-1") Tasks
+      v-btn(outlined color="blue-grey lighten-2") Settings
+    .base-display
+      app-messages
+
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import TaskBoxVue from '../../components/Boxes/TaskBox.vue';
 import SidebarActionsVue from '../../components/Menus/SidebarActions.vue';
-import { Message, Task } from '@/types';
-import MessageTicker from '@/components/Boxes/MessageTicker.vue';
+import { Task } from '@/types';
+import MessageContainer from '@/components/Boxes/Message.container.vue';
 
 @Component({
   name: 'UserBase',
   components: {
     'app-sidebar-actions': SidebarActionsVue,
     'app-taskbox': TaskBoxVue,
-    'app-messageticker': MessageTicker,
+    'app-messages': MessageContainer,
   },
 })
 export default class UserBase extends Vue {
   tasks: Array<Task> = [];
-  messages: Array<Message> = [];
 
   mounted() {
     this.$store.dispatch('fetchTasks');
-    this.$store.dispatch('fetchMessages');
     this.tasks = this.$store.state.Task.tasks;
-    this.messages = this.$store.state.Message.messages;
-    console.log(this.tasks);
   }
 }
 </script>
@@ -44,28 +40,27 @@ export default class UserBase extends Vue {
 .base-container {
   width: 100%;
   height: 100vh;
-  display: inline-flex;
-  .menu-left {
-    width: 15%;
-    padding: 1rem;
-    border-right: 2px double var(--color-dark);
-    hr {
+  .base-body {
+    width: 95%;
+    height: 90%;
+    // background: gray;
+    margin: 0 auto;
+    margin-top: 1rem;
+    .base-btnbar {
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      margin: 0 auto;
+      padding-top: 2rem;
+      grid-column-gap: 1rem;
+      grid-row-gap: 1rem;
+    }
+    .base-display {
+      width: 75%;
+      height: 80%;
+      margin: 0 auto;
       margin-top: 1rem;
-      background: var(--color-dark);
     }
-    h2 {
-      text-align: center;
-      margin-top: 0.5rem;
-    }
-  }
-  .center-field {
-    width: 70%;
-    padding: 1rem;
-  }
-  .right-menu {
-    width: 15%;
-    border-left: 2px double var(--color-dark);
-    padding: 1rem;
   }
 }
 </style>

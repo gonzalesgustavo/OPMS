@@ -30,6 +30,15 @@ export default {
             color: '#3b9485',
           },
         },
+        {
+          to: '@macknaw',
+          from: '@Gorbo',
+          msg: 'Advanced filtering options added to write view',
+          project: {
+            title: 'Morgans Danger App',
+            color: '#3b9485',
+          },
+        },
       ]);
     },
   },
