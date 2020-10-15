@@ -1,11 +1,18 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue';
+import Vuex from 'vuex';
+
+import Messages from './modules/Message';
+import Projects from './modules/Projects';
+import Tasks from './modules/Tasks';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {}
+const store = new Vuex.Store({
+  modules: {
+    Message: Messages,
+    Project: Projects,
+    Task: Tasks,
+  },
 });
+
+export default store;

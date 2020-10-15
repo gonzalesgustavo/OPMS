@@ -1,35 +1,30 @@
 <template>
   <v-app>
-    <v-main class="main-bod">
-      <router-view />
-    </v-main>
+    <router-view />
   </v-app>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { Component, Vue } from 'vue-property-decorator';
 
-export default Vue.extend({
-  name: "App",
-
+@Component({
+  name: 'App',
   components: {},
-
-  data: () => ({
-    //
-  })
-});
+})
+export default class App extends Vue {}
 </script>
 
 <style lang="scss">
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-.main-bod {
-  background: #22272e;
-}
+
 :root {
-  --color-bg-dark: rgb(51, 62, 74);
-  --color-primary: #d8a2e8;
+  --bg-dark: rgba(22, 70, 75, 0.568);
+  --color-primary: rgb(25, 120, 129);
+  --color-primary-tint: rgb(173, 243, 250);
+  --color-dark: rgb(14, 36, 36);
 }
 </style>

@@ -24,17 +24,18 @@
             v-text-field(
               label="Confirm"
               outlined)
-      div(class="d-flex justify-center")
-        v-btn Sign Up
+      div(class="d-flex justify-center adj-pd")
+        v-btn 
+          router-link(to="/main/23344", style="cursor: pointer; text-decoration: none;") Sign Up
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
-  components: {}
+  components: {},
 })
-export default class SignUpForm extends Vue {}
+export default class SignupForm extends Vue {}
 </script>
 
 <style lang="scss" scoped>
@@ -47,6 +48,9 @@ export default class SignUpForm extends Vue {}
   }
   .mv-up {
     margin-top: -20px;
+  }
+  .adj-pd {
+    padding-bottom: 2rem;
   }
 }
 </style>

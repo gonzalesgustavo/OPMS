@@ -4,15 +4,6 @@
   p A simple project managment system to handle all your personal code projects
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-
-@Component({
-  components: {}
-})
-export default class InfoTicker extends Vue {}
-</script>
-
 <style lang="scss" scoped>
 .inner-cont {
   width: 70%;
