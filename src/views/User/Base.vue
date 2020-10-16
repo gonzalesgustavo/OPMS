@@ -2,12 +2,12 @@
 .base-container
   .base-body
     .base-btnbar
-      v-btn(outlined, color="indigo") Projects
-      v-btn(outlined color="purple lighten-1") Messages
-      v-btn(outlined color="blue lighten-1") Tasks
-      v-btn(outlined color="amber darken-4") Notes
+      v-btn(outlined, color="indigo", @click="selectedView = 'app-project-container'") Projects
+      v-btn(outlined color="purple lighten-1", @click="selectedView = 'app-message-container'") Messages
+      v-btn(outlined color="blue lighten-1", @click="selectedView = 'app-task-container'") Tasks
+      v-btn(outlined color="amber darken-4", @click="selectedView = 'app-note-container'") Notes
     .base-display
-      app-note-container
+      component(:is="selectedView") 
 </template>
 
 <script lang="ts">
@@ -28,7 +28,9 @@ import NoteContainer from '@/components/Boxes/Note.container.vue';
     'app-note-container': NoteContainer,
   },
 })
-export default class UserBase extends Vue {}
+export default class UserBase extends Vue {
+  selectedView = 'app-project-container';
+}
 </script>
 
 <style lang="scss" scoped>
