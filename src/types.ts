@@ -20,6 +20,12 @@ export interface MessageState {
   messages: Array<Message>;
 }
 
+export interface Note {
+  message: string;
+  date: string;
+  project: ProjectMicro;
+}
+
 export interface Project {
   title: string;
   userId: string;

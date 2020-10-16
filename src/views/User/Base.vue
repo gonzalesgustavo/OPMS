@@ -5,35 +5,30 @@
       v-btn(outlined, color="indigo") Projects
       v-btn(outlined color="purple lighten-1") Messages
       v-btn(outlined color="blue lighten-1") Tasks
-      v-btn(outlined color="blue-grey lighten-2") Settings
+      v-btn(outlined color="amber darken-4") Notes
     .base-display
-      app-messages
-
+      app-note-container
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import TaskBoxVue from '../../components/Boxes/TaskBox.vue';
 import SidebarActionsVue from '../../components/Menus/SidebarActions.vue';
-import { Task } from '@/types';
 import MessageContainer from '@/components/Boxes/Message.container.vue';
+import TaskContainer from '@/components/Boxes/Tasks.container.vue';
+import ProjectContainer from '@/components/Boxes/Project.container.vue';
+import NoteContainer from '@/components/Boxes/Note.container.vue';
 
 @Component({
   name: 'UserBase',
   components: {
     'app-sidebar-actions': SidebarActionsVue,
-    'app-taskbox': TaskBoxVue,
-    'app-messages': MessageContainer,
+    'app-message-container': MessageContainer,
+    'app-task-container': TaskContainer,
+    'app-project-container': ProjectContainer,
+    'app-note-container': NoteContainer,
   },
 })
-export default class UserBase extends Vue {
-  tasks: Array<Task> = [];
-
-  mounted() {
-    this.$store.dispatch('fetchTasks');
-    this.tasks = this.$store.state.Task.tasks;
-  }
-}
+export default class UserBase extends Vue {}
 </script>
 
 <style lang="scss" scoped>
@@ -43,7 +38,6 @@ export default class UserBase extends Vue {
   .base-body {
     width: 95%;
     height: 90%;
-    // background: gray;
     margin: 0 auto;
     margin-top: 1rem;
     .base-btnbar {

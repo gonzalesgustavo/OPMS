@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import Messages from './modules/Message';
+import Notes from './modules/Notes';
 import Projects from './modules/Projects';
 import Tasks from './modules/Tasks';
 
@@ -12,6 +13,7 @@ const store = new Vuex.Store({
     Message: Messages,
     Project: Projects,
     Task: Tasks,
+    Note: Notes,
   },
 });
 
