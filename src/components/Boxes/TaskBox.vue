@@ -1,7 +1,7 @@
 <template lang="pug">
 .taskbox-container
   v-list-item(class="item-rad" v-ripple="false")        
-    v-list-item-icon(@click="handleDone")
+    v-list-item-icon(@click="handleDone", data-testid="check-donetask")
       v-icon {{icon}}
     v-list-item-content 
         v-list-item-title(style="overflow: auto;") 
