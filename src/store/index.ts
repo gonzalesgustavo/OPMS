@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import ButtonManager from './modules/ButtonManager';
 
 import Messages from './modules/Message';
 import Notes from './modules/Notes';
@@ -14,6 +15,7 @@ const store = new Vuex.Store({
     Project: Projects,
     Task: Tasks,
     Note: Notes,
+    Button: ButtonManager,
   },
 });
 

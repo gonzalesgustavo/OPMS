@@ -2,7 +2,7 @@
   <div>
     <v-container>
       <v-row justify="space-around">
-        <v-card width="400">
+        <v-card width="400" @click="navigate()">
           <v-img
             height="200px"
             src="https://cdn.pixabay.com/photo/2020/07/12/07/47/bee-5396362_1280.jpg"
@@ -76,5 +76,13 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 export default class ProjectBox extends Vue {
   @Prop({ required: true }) title!: string;
   @Prop() username!: string;
+  navigate(): void {
+    this.$router.push({
+      name: 'ProjectHome',
+      params: {
+        id: '122jkdjd8i1',
+      },
+    });
+  }
 }
 </script>

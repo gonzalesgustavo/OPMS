@@ -3,6 +3,8 @@ import VueRouter, { RouteConfig } from 'vue-router';
 import Login from '../views/Login.vue';
 import UserHome from '../views/User/Home.vue';
 import UserBase from '../views/User/Base.vue';
+import ProjectHome from '../views/Project/Home.vue';
+import ProjectBase from '../views/Project/Base.vue';
 
 Vue.use(VueRouter);
 
@@ -21,6 +23,18 @@ const routes: Array<RouteConfig> = [
         path: '',
         name: 'UserBase',
         component: UserBase,
+      },
+    ],
+  },
+  {
+    path: '/project/:id',
+    name: 'ProjectHome',
+    component: ProjectHome,
+    children: [
+      {
+        path: '',
+        name: 'ProjectBase',
+        component: ProjectBase,
       },
     ],
   },
