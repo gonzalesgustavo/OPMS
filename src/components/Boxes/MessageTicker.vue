@@ -23,7 +23,7 @@
             src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light")
 
         v-list-item-content
-          v-list-item-title {{sender}}
+          v-list-item-title(data-testid="messageticker-sender") {{sender}}
 
         v-row(
           align="center"

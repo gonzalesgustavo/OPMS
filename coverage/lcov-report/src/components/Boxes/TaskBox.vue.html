@@ -22,30 +22,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">78.57% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>11/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">76.92% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>10/13</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -97,8 +97,12 @@
 <a name='L39'></a><a href='#L39'>39</a>
 <a name='L40'></a><a href='#L40'>40</a>
 <a name='L41'></a><a href='#L41'>41</a>
-<a name='L42'></a><a href='#L42'>42</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -116,12 +120,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -140,42 +150,47 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template lang="pug"&gt;
 .taskbox-container
-  .task-box(v-for="task in tasks")
-    v-avatar(
-      :color="task.project.color || 'purple darken-1'"
-      size="25"
-      style="font-size: 5pt; color: white;") {{task.project.title | initials}} 
-    h5 {{task.message | textlimit(15)}}
+  v-list-item(class="item-rad" v-ripple="false")        
+    v-list-item-icon(@click="handleDone", data-testid="check-donetask")
+      v-icon {{icon}}
+    v-list-item-content 
+        v-list-item-title(style="overflow: auto;") 
+          p(ref="text") {{ message }} 
 &lt;/template&gt;
 &nbsp;
 &lt;script lang="ts"&gt;
-import { Task } from '@/types';
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue, Ref } from 'vue-property-decorator';
 &nbsp;
 @Component({
   components: {},
 })
 export default class TaskBox extends Vue {
-  @Prop() tasks!: Array&lt;Task&gt;;
+  @Prop() message!: string;
+  @Ref() readonly text!: HTMLParagraphElement;
+  icon = 'mdi-checkbox-blank-outline';
+  onStatus = false;
+  handleDone(): void {
+<span class="missing-if-branch" title="else path not taken" >E</span>    if (!this.onStatus) {
+      this.onStatus = true;
+      this.text.style.textDecoration = 'line-through';
+      this.icon = 'mdi-check-box-outline';
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.onStatus = false;</span>
+<span class="cstat-no" title="statement not covered" >      this.text.style.textDecoration = 'none';</span>
+<span class="cstat-no" title="statement not covered" >      this.icon = 'mdi-checkbox-blank-outline';</span>
+    }
+  }
 }
 &lt;/script&gt;
 &nbsp;
 &lt;style lang="scss" scoped&gt;
 .taskbox-container {
-  width: 100%;
-  max-height: 450px;
-  overflow: auto;
-  border: 1px solid var(--color-dark);
-  padding: 1rem;
-  padding-top: 0;
-  .task-box {
-    display: flex;
-    padding-top: 1rem;
-    h5 {
-      padding-top: 4px;
-      margin-left: 0.5rem;
-      font-size: 8pt;
-    }
+  width: auto;
+  border: 2px solid rgba(50, 181, 204, 0.897);
+  border-radius: 30px;
+  p {
+    padding: 0;
+    margin: 0;
   }
 }
 &lt;/style&gt;
@@ -186,7 +201,7 @@ export default class TaskBox extends Vue {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Oct 15 2020 09:15:04 GMT-0600 (Mountain Daylight Time)
+                at Sun Oct 18 2020 10:26:22 GMT-0600 (Mountain Daylight Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

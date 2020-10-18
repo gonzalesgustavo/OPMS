@@ -3,9 +3,9 @@
     .box-h
       slot(name="left")
     .box-h
-      p center
+      slot(name="center")
     .box-h
-      p right
+      slot(name="right")
 </template>
 
 <script lang="ts">
@@ -19,8 +19,6 @@ export default class TriTicketContainer extends Vue {}
 
 <style lang="scss" scoped>
 .tribox-container {
-  border: 2px solid var(--color-primary-tint);
-  border-radius: 10px;
   height: 50%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -28,11 +26,13 @@ export default class TriTicketContainer extends Vue {}
     padding: 1rem;
     height: 400px;
     overflow: auto;
+    border: 2px double black;
+
     &:nth-child(1) {
-      border-right: 2px solid blue;
+      border-right: 3px double black;
     }
     &:nth-child(2) {
-      border-right: 2px solid blue;
+      border-right: 3px double black;
     }
   }
 }

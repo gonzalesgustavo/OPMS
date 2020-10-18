@@ -2,6 +2,9 @@
 .project-home
   app-darkbar
   v-container(elevation="4")
+    app-addbar
+      h3(slot="title") Tasks
+      v-icon(color="blue-grey lighten-2", size="45") mdi-plus-box
     app-tribox
       div(slot="left")
         v-expansion-panels
@@ -14,6 +17,7 @@
 <script lang="ts">
 import TriTicketContainer from '@/components/Boxes/TriTicketBox.container.vue';
 import DarkBarVue from '@/components/Design/DarkBar.vue';
+import TopBar from '@/components/Menus/TopBar.vue';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
@@ -21,6 +25,7 @@ import { Component, Vue } from 'vue-property-decorator';
   components: {
     'app-darkbar': DarkBarVue,
     'app-tribox': TriTicketContainer,
+    'app-addbar': TopBar,
   },
 })
 export default class ProjectHome extends Vue {}
