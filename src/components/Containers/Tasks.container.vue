@@ -18,7 +18,7 @@
 <script lang="ts">
 import { Task } from '@/types';
 import { Component, Vue } from 'vue-property-decorator';
-import TaskBox from './TaskBox.vue';
+import TaskBox from '../Boxes/TaskBox.vue';
 
 @Component({
   components: {

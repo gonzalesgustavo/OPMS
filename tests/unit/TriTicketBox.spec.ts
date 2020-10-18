@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { createLocalVue, mount, Wrapper } from '@vue/test-utils';
-import TriTicketContainer from '@/components/Boxes/TriTicketBox.container.vue';
+import TriTicketContainer from '@/components/Containers/TriTicketBox.container.vue';
 import { CombinedVueInstance } from 'vue/types/vue';
 import Vuetify from 'vuetify';
 

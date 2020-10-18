@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1603042425231" clover="3.2.0">
-  <project timestamp="1603042425231" name="All files">
-    <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="7" coveredelements="7" complexity="0" loc="7" ncloc="7" packages="1" files="2" classes="2"/>
+<coverage generated="1603043367382" clover="3.2.0">
+  <project timestamp="1603043367382" name="All files">
+    <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="5" coveredelements="5" complexity="0" loc="5" ncloc="5" packages="1" files="1" classes="1"/>
     <file name="MessageTicker.vue" path="/mnt/e179884f-fc91-4273-83ac-ce60612f1d5a/workspaces/professional-workspace/OhmniPresent/client/src/components/Boxes/MessageTicker.vue">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <line num="40" count="1" type="stmt"/>
@@ -9,11 +9,6 @@
       <line num="46" count="1" type="stmt"/>
       <line num="47" count="1" type="stmt"/>
       <line num="48" count="1" type="stmt"/>
-    </file>
-    <file name="TriTicketBox.container.vue" path="/mnt/e179884f-fc91-4273-83ac-ce60612f1d5a/workspaces/professional-workspace/OhmniPresent/client/src/components/Boxes/TriTicketBox.container.vue">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="17" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

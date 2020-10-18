@@ -10,7 +10,7 @@
 <script lang="ts">
 import { Project } from '@/types';
 import { Component, Vue } from 'vue-property-decorator';
-import ProjectBox from './ProjectBox.vue';
+import ProjectBox from '../Boxes/ProjectBox.vue';
 
 @Component({
   components: {

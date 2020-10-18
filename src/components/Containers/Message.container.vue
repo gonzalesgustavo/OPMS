@@ -8,7 +8,7 @@
 <script lang="ts">
 import { Message } from '@/types';
 import { Component, Vue } from 'vue-property-decorator';
-import MessageTicker from './MessageTicker.vue';
+import MessageTicker from '../Boxes/MessageTicker.vue';
 
 @Component({
   components: {

@@ -14,10 +14,10 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import SidebarActionsVue from '../../components/Menus/SidebarActions.vue';
-import MessageContainer from '@/components/Boxes/Message.container.vue';
-import TaskContainer from '@/components/Boxes/Tasks.container.vue';
-import ProjectContainer from '@/components/Boxes/Project.container.vue';
-import NoteContainer from '@/components/Boxes/Note.container.vue';
+import MessageContainer from '@/components/Containers/Message.container.vue';
+import TaskContainer from '@/components/Containers/Tasks.container.vue';
+import ProjectContainer from '@/components/Containers/Project.container.vue';
+import NoteContainer from '@/components/Containers/Note.container.vue';
 import SideNavBase from '@/components/Menus/SideNav.base.vue';
 
 @Component({

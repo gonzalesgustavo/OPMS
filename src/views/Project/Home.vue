@@ -15,7 +15,7 @@
             v-expansion-panel-content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 </template>
 <script lang="ts">
-import TriTicketContainer from '@/components/Boxes/TriTicketBox.container.vue';
+import TriTicketContainer from '@/components/Containers/TriTicketBox.container.vue';
 import DarkBarVue from '@/components/Design/DarkBar.vue';
 import TopBar from '@/components/Menus/TopBar.vue';
 import { Component, Vue } from 'vue-property-decorator';

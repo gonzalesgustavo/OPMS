@@ -9,7 +9,7 @@
 <script lang="ts">
 import { Note } from '@/types';
 import { Component, Vue } from 'vue-property-decorator';
-import NoteBox from './NoteBox.vue';
+import NoteBox from '../Boxes/NoteBox.vue';
 
 @Component({
   components: {
