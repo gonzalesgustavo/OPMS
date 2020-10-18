@@ -3,4 +3,4 @@
 
 ## Description
 
-A simple application for personal programming project managment. 
+A simple project management system for programmers. 
